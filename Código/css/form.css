@@ -1,0 +1,93 @@
+.btnCad{
+	width: 145px;
+	background-color: #00B7FF;
+	border-color: #006186;
+	color:#fafafa;
+}
+
+.btnCad:hover{
+	width: 145px;
+	background-color: #5CD0FC;
+	border-color: #00B7FF;
+	color:#006186;
+	outline: none;
+}
+
+.field{
+	position: relative;
+	margin-bottom: 2.4em;
+}
+
+.field-label{
+	color: #d2d2d2;
+	font-size:16px;
+	font-weight: normal;
+	font-family: 'Roboto Mono', sans-serif;
+	position: absolute;
+	pointer-events: none;
+	top: 10px;
+	transition: 0.2s ease all;
+}
+
+.field-input{
+	background-color: #1a1a1a;
+	color:#909090;
+	font-size:15;
+	padding: 10px 0 10px 0;
+	display: block;
+	outline: none;
+	border: none;
+	width: 300px;
+	border-bottom: 1px solid #2d2d2d;
+}
+
+/* Animação */
+
+.bar{
+	position: relative;
+	display: block;
+	width: 300px;
+}
+
+.bar:after,.bar:before{
+	content: "";
+	height: 2px;
+	width: 0;
+	position: absolute;
+	background: #00B7FF;
+	transition: 0.2s ease all;
+}
+
+.bar:before{ left: 50%; }
+
+.bar:after{	right: 50%; }
+
+
+input:focus ~ label, input.used ~ label {
+	top: -20px;
+	font-size: 13px;
+	color: #00B7FF;
+}
+
+input:focus ~ .bar::before, input:focus ~ .bar::after{
+	width: 50%;
+}
+
+
+input[type=month]::-webkit-inner-spin-button {
+    display:none;
+}
+
+input[type=month]{
+	color: transparent;
+}
+
+input[type=month]::-webkit-calendar-picker-indicator, ::-webkit-calendar-picker-indicator:hover{
+	color: #FFF;
+	background-color: #1a1a1a;
+	display: visible;
+}
+
+form{ 
+	padding: 2.5em;
+}

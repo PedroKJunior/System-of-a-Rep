@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+body{
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	background-color: #1a1a1a;
+	margin:0;
+	overflow: hidden;
+}
+
+a, a:hover, a:visited{
+	text-decoration: none;
+	color: white;
+}
+
+.body{
+	padding: 10px 0 0 0;
+	margin-top: 150px;
+	
+	width: 100%;
+}
+
+.botao{
+	width: 100%;
+	background: #00BCD4;
+	padding: 15px 0 15px 0;
+	margin-top: 50px;
+	text-align: center;
+	border: none;
+}
