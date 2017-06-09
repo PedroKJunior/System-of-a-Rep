@@ -50,5 +50,22 @@ $(document).ready(function(){
 		  	top: y + 'px',
 		  	left: x + 'px'
 		}).addClass("rippleBtn");
+
+
+		if(tabreference == 0){
+			setTimeout(function(){
+				window.location = 'cadastrar.html';
+			}, 700);
+		}
+		else if(tabreference == 1){
+			setTimeout(function(){
+				window.location = 'histlist.html';
+			}, 700);
+		}
+		else if(tabreference == 2){
+			setTimeout(function(){
+				window.location = 'calc.php';
+			}, 700);
+		}
 	});
 });

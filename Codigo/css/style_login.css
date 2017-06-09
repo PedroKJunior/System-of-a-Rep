@@ -46,12 +46,17 @@
 	text-align: center;
 }
 
-.btn{
+.btnLogin{
 	border: 1px solid #265D7F;
 	background: #265D7F;
+	color: white !important;
+
 }
 
-.btn:hover{
-	border: 1px solid #265D7F;
-	background: #0072ba;
+.alert{
+	padding: 5px;
+	color: #3c3c3c;
 }
+
+
+

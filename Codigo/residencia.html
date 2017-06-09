@@ -10,6 +10,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/validacao.js"></script>
+	<style type="text/css">
+		.slider{
+			left:0;
+		}
+	</style>
 </head>
 <body>
 	<div class="row">
@@ -30,11 +35,30 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="body">
-				<a href="moradores.html"><div class="botao">Cadastrar Morador</div></a>
-				<a href="despesas.html"><div class="botao">Cadastrar Despesas</div></a>
-			</div>
+		<div class="col-md-4 col-md-offset-4">
+			<h2>Cadastro de Moradores</h2>
+			<form action="cad_residencia.php" method="post" class="form-container form-item col-5">
+				<div class="content">	
+
+					<div class="field">
+						<input type="text" required name="aluguel" class="field-input"/>
+						<label for="aluguel" class="field-label">Aluguel</label>
+						<span class="bar"></span>	
+					</div>
+
+					<div class="field">
+						<input type="text" name="caixinha" class="field-input"/>
+						<label for="caixinha" class="field-label">Caixinha</label>
+						<span class="bar"></span>	
+					</div>
+
+					<div class="field">
+						<input type="submit" name="cadastrar" class="btnCad btn btn-primary" value="Cadastrar" />
+						<input type="reset" class="btnCad btn btn-primary" value="Cancelar" />
+					</div>
+
+				</div>
+			</form>
 		</div>
 	</div>
 </body>

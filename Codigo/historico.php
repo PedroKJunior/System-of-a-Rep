@@ -11,6 +11,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/validacao.js"></script>
+	<style type="text/css">
+		.slider{
+			left:160px;
+		}
+	</style>
 </head>
 <body>
 	<div class="row">
@@ -33,35 +38,54 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="body">
+
+				<?php
+
+			 		$mysqli =  mysqli_connect('localhost', 'root', '', 'systemofarep') or die("Não foi possivel conectar ao servidor MySQL");
+
+			 		$sql = ("SELECT * FROM `despesas`");
+			 		$query = mysqli_query($mysqli, $sql);
+
+
+			 		$val = mysqli_query($mysqli, "SELECT * FROM `residencia` WHERE `id` LIKE 1");
+				?>
 				
 				<table>
 					<thead>
 						<tr>
-							<th>Nome</th>
-							<th>Apelido</th>
-							<th>Celular</th>
+							<th>Mês</th>
+							<th>Despesas</th>
 						</tr>
 					</thead>
 					<tbody>
+						
+					<?php
+						while ($dados = mysqli_fetch_array($query)) {
+					?>
 						<tr>
-							<td>Pedro Jr</td>
-							<td>Loko</td>
-							<td>(xx) xxxx-xxxxx</td>
+							<td>
+								<?php
+									echo "<a href='inf_despesa.php?id=".$dados['id']."'>".$dados['mes']."</a>";
+								?>
+							</td>
+							<td>
+								<?php
+									echo $dados['total'];
+								?>
+							</td>
 						</tr>
+						<?php } ?>
 						<tr>
-							<td>Raphael</td>
-							<td>Kenji</td>
-							<td>(xx) xxxx-xxxxx</td>
-						</tr>
-						<tr>
-							<td>Victor</td>
-							<td> ----- </td>
-							<td>(xx) xxxx-xxxxx</td>
-						</tr>
-						<tr>
-							<td>Lucas</td>
-							<td> ----- </td>
-							<td>(xx) xxxx-xxxxx</td>
+							<td style="background-color: #00BCD4; font-weight: bold; color: white;">
+								Aluguel:
+							</td>
+							<td style="background-color: #2a2a2a;"">
+								<?php
+									while($valor = mysqli_fetch_array($val)){
+										echo $valor['aluguel'];
+									}
+								?>		
+							</td>
 						</tr>
 					</tbody>
 				</table>

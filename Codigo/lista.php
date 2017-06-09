@@ -7,9 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="css/form.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/tabela.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/menu.js"></script>
 	<script src="js/validacao.js"></script>
+	<style type="text/css">
+		.slider{
+			left:160px;
+		}
+	</style>
 </head>
 <body>
 	<div class="row">
@@ -32,13 +38,41 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="body">
-				<div class="field col-md-4 col-md-offset-4">
-					<input type="month" required name="mesCalc" class="field-input" id="month"/>
-					<label for="mesCalc" class="field-label">Mês</label>
-					<span class="bar"></span>	
-				</div>
 
-				<input type="button" class="botao" value="Calcular">
+				<?php
+
+			 		$mysqli =  mysqli_connect('localhost', 'root', '', 'systemofarep') or die("Não foi possivel conectar ao servidor MySQL");
+
+			 		$sql = ("SELECT * FROM `moradores`");
+			 		$query = mysqli_query($mysqli, $sql);
+				?>
+				<table>
+					<thead>
+						<tr>
+							<th>Morador</th>
+							<th>Telefone</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					<?php
+						while ($dados = mysqli_fetch_array($query)) {
+					?>
+						<tr>
+							<td>
+								<?php
+									echo "<a href='inf_morador.php?id=".$dados['id']."'>".$dados['nome']."</a>";
+								?>
+							</td>
+							<td>
+								<?php
+									echo $dados['telefone'];
+								?>
+							</td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

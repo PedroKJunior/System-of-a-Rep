@@ -17,3 +17,12 @@ table{
 	width: 100%;
 	color: #CCC;
 }
+
+.th{
+	background-color: #00BCD4;
+	font-weight: bold;
+}
+
+.td{
+	background-color: #1a1a1a;
+}

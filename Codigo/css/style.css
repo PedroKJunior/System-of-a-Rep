@@ -29,3 +29,20 @@ a, a:hover, a:visited{
 	text-align: center;
 	border: none;
 }
+
+.end{
+	position: absolute;
+	top:50%;
+	text-align: center;
+	font-size: 20px;
+}
+
+.redirect{
+	font-size: 13px;
+}
+
+.err{
+	background-color:#FF4043; 
+	border:1px solid #CC3336;
+	padding: 10px;
+}
